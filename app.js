@@ -6,24 +6,17 @@ function clock(){
     function display(){
     const today = new Date();
     let h  = today.getHours();
-    hour.innerHTML = h;
      let m  = today.getMinutes();
-     minute.innerHTML = m;
      let s  = today.getSeconds();
-     second.innerHTML = s;
+      s = s < 10 ? "0" + s : s;
+      m = m < 10 ? "0" + m : m;
+      h = h < 10 ? "0" + h : h;
+
      ampm.innerHTML = "am";
-    if(hour.innerHTML < 10){
-        hour.innerHTML  = " 0" + hour.innerHTML;
-     }
-     if(hour.innerHTML > 12){
-        ampm.innerHTML = "pm"
-     }
-     if(minute.innerHTML < 10){
-        minute.innerHTML  = " 0" + minute.innerHTML;
-     }
-     if(second.innerHTML < 10){
-        second.innerHTML  = " 0" + second.innerHTML;
-     }
+     hour.innerHTML = h;
+     minute.innerHTML = m;
+     second.innerHTML = s;
+    }
     }
 setInterval(()=>{
     display();
